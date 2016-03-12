@@ -48,6 +48,11 @@ body{
 	overflow: hidden !important;
 }
 
+.table-container {
+    overflow: auto;
+    max-height: 300px;
+}
+
 .container-action-search{
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;

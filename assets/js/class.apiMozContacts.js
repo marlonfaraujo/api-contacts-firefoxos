@@ -120,8 +120,7 @@ var ApiMozContacts = function(){
 	}
 
 	this.setContact = function(contact){
-
-		_contact = new Contact(contact.name[0], contact.id);
+		_contact = new Contact(contact.name || contact.givenName, contact.id);
 
 		for(var i = 0; i < contact.tel.length; i++){
 			_contact.phone(new Phone(contact.tel[i].type[0], contact.tel[i].value));
