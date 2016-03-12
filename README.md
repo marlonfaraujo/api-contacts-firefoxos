@@ -17,7 +17,7 @@ Example of how to consume the api Firefox OS contacts.
 	navigator.mozContacts.remove(contact);
 
 
-Libs:
+References:
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/API/Contacts_API
 
