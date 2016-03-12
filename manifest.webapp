@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "name": "Manage Contacts Firefox",
+  "description": "Manage Contacts Firefox",
+  "launch_path": "/index.html",
+  "type": "privileged",
+  "icons": {
+    "16": "contacts-2-128.png",
+    "48": "contacts-2-128.png",
+    "128": "contacts-2-128.png"
+  },
+  "orientation": "portrait",
+  "developer": {
+    "name": "Marlon",
+    "url": "https://github.com/marlonfda"
+  },
+  "permissions": {
+    "contacts": {
+      "description": "Required for autocompletion in the share screen",
+      "access": "readwrite"
+    }
+  },
+  "default_locale": "pt-BR"
+}

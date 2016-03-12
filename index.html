@@ -1,0 +1,124 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1, requiresActiveX=true">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Homepage">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="description" content="Homepage">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="msapplication-TileColor" content="#3d3d3d">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/material.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header class="main-header mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+
+        <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600 container-action-search">
+
+          <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#overview" class="mdl-layout__tab" style="color: #ffffff;">Contatos</a>
+          </div>
+
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            <li class="mdl-menu__item mdl-js-ripple-effect">Novo Contato</li>
+              <li class="mdl-menu__item mdl-js-ripple-effect">Localizar Contatos</li>
+            <!--<li class="mdl-menu__item mdl-js-ripple-effect">Configurações</li> -->
+          </ul>
+          <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation" style="color: #ffffff;">more_vert</i>
+            <span class="visuallyhidden">show menu</span>
+          </button>
+        </div>
+      </header>
+      <main class="main-content">
+        <section id="list">
+          <div class="search">
+            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600 container-action-search">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input name-contact" type="text" />
+                  <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Nome</th>
+              <th>Número</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"></td>
+              <td></td>
+              <td></td>
+            </tr>
+          -->
+          </tbody>
+        </table>
+      </section>
+      <section id="register" style="display: none;">
+        <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+          <input type="hidden" id="contact-id" value="">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="name" />
+            <label class="mdl-textfield__label" for="name">Nome</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone" />
+            <label class="mdl-textfield__label" for="phone">Telefone</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-save">
+            Salvar
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btn-remove" style="display: none">
+            Excluir
+          </button>
+        </div>
+      </section>
+      </main>
+      <footer class="main-footer">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="btn-add">
+          <i class="material-icons" role="presentation">add</i>
+          <span class="visuallyhidden">Add</span>
+        </button>
+      </footer>
+    </div>
+    <script src="assets/js/lib/jquery.js"></script>
+    <script src="assets/js/lib/material.min.js"></script>
+    <script src="assets/js/class.phone.js"></script>
+    <script src="assets/js/class.contact.js"></script>
+    <script src="assets/js/class.apiMozContacts.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+  </html>
