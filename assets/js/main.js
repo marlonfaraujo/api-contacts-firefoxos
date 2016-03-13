@@ -28,7 +28,8 @@ var AppContacts = {};
 				var contact = {
 					id: $('#contact-id').val(),
 					name: $('#name').val(),
-					phone: $('#phone').val()
+					phone: $('#phone').val(),
+                    type: $('#contact-type').val()
 				};
 
 				if(contact.id){
@@ -80,7 +81,8 @@ var AppContacts = {};
 				var contact = {
 					id: $($(this).children()[0]).data('id'),
 					name: $(this).children()[0].innerHTML,
-					phone: $(this).children()[1].innerHTML
+					phone: $(this).children()[1].innerHTML,
+                    type: $($(this).children()[1]).data('type')
 				};
 
 				openFormContact(contact);
@@ -110,11 +112,13 @@ var AppContacts = {};
 			function openFormContact(contact){
 				if(contact && (contact.name || contact.phone)){
 					$('#contact-id').val(contact.id || "");
+					$('#contact-type').val(contact.type || "");
 					$('#name').val(contact.name || "").parent().addClass(contact.name ? 'is-dirty' : '');
 					$('#phone').val(contact.phone || "").parent().addClass(contact.phone ? 'is-dirty' : '');
 					$btnRemove.show();
 				}else{
 					$('#contact-id').val("");
+					$('#contact-type').val("");
 					$('#name').val("").parent().removeClass('is-dirty');
 					$('#phone').val("").parent().removeClass('is-dirty');
 					$btnRemove.hide();
@@ -144,11 +148,10 @@ var AppContacts = {};
 					if(data[i].getName()){
 						for(var y = 0; y < data[i].getPhones().length; y++){
 							var contentHtml = '<td data-id="'+ data[i].getId() +'" class="ellip">' + data[i].getName() + '</td>';
-							contentHtml += '<td class="ellip">' + data[i].getPhones()[y].getNumber() + '</td>';
+							contentHtml += '<td data-type="'+ data[i].getPhones()[y].getType() +'" class="ellip">' + data[i].getPhones()[y].getNumber() + '</td>';
 							contentHtml += '<td><button class="mdl-button mdl-js-button mdl-button--primary" id="btn-edit">Editar</button></td>';
 							$('.mdl-data-table tbody').append('<tr>'+ contentHtml +'</tr>');
-
-
+                            //save json in localstorage
 						}
 					}
 				}

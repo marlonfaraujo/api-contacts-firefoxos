@@ -68,7 +68,12 @@ var ApiMozContacts = function(){
 		var contact = {};
 		if(res && res.id){
 			contact = res;
-			contact.tel[0].value = data.phone;
+            for(var i = 0; i < contact.tel.length; i++){
+                if(contact.tel[i].type[0] == data.type){
+                    contact.tel[i].value = data.phone;
+                    break;
+                } 
+            }
 		}else{
 			contact = new mozContact();
 			contact.tel = [{type: ['mobile'], value: data.phone, carrier: '', pref: ''}];
