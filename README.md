@@ -17,10 +17,10 @@ Example of how to consume the api Firefox OS contacts.
 	navigator.mozContacts.remove(contact);
 
 
-References:
+References/Uses:
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/API/Contacts_API
 
-http://jquery.com/
-
 https://github.com/google/material-design-lite
+
+http://jquery.com/
