@@ -1,11 +1,11 @@
-Example of how to consume the api Firefox OS contacts.
+Example usage api Firefox OS contacts.
 
 - List All Contacts
-	
+
   	navigator.mozContacts.getAll();
 
 - Find Contact
-	
+
 	navigator.mozContacts.find(params);
 
 - Save Contact
